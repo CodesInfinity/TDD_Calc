@@ -12,7 +12,7 @@ import pkg.Cuenta;
 
 class CuentaTest {
 
-	private static Cuenta cuenta;
+	private static Cuenta cuenta, cuenta12345, cuenta67890;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -42,6 +42,23 @@ class CuentaTest {
 	void testRetirar() {
 		cuenta.retirar(500.0);
 		assertEquals(-500.0, cuenta.getSaldo());
+	}
+	
+	// Todo en un mismo test.
+	@Test
+	void test0014() {
+		cuenta12345 = new Cuenta(50);
+		cuenta67890 = new Cuenta(0);
+		
+		cuenta12345.retirar(200.0);
+		cuenta67890.retirar(350.0);
+		cuenta12345.ingresar(100.0);
+		cuenta67890.retirar(200.0);
+		cuenta67890.retirar(150.0);
+		cuenta12345.retirar(200.0);
+		cuenta67890.ingresar(50);
+		cuenta67890.retirar(100.0);
+		
 	}
 
 
