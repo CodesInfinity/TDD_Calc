@@ -12,12 +12,12 @@ public class Cuenta {
 
 	public void ingresar(double i) {
 		// TODO Auto-generated method stub
-		this.saldo = 500;
+		this.saldo += i;
 	}
 
 	public void retirar(double i) {
 		// TODO Auto-generated method stub
-		this.saldo = -500.0;
+		this.saldo -= i;
 	}
 	
 	public double getSaldo() {
